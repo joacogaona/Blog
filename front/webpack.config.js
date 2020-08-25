@@ -19,6 +19,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: "babel-loader",
+        query: {
+          presets: ["@babel/preset-react", "@babel/env"],
+        },
+      },
     ],
   },
   devtool: "source-map",
