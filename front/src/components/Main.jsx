@@ -1,16 +1,14 @@
 import React from "react";
+import SingleArticleContainer from "../containers/SingleArticleContainer";
 
 const Main = () => {
   return (
     <div>
       <div>{/* <Route path="/" component={NavBarContainer} /> */}</div>
       <div>
-        {/*  <Switch>
-          <Route path="/home" component={HomeContainer} />
-          <Route path="/article" component={ArticleContainer} />
-
-          <Redirect to="/home"></Redirect>
-        </Switch> */}
+        <Switch>
+          <Route path="/article/:title" component={SingleArticleContainer} />
+        </Switch>
       </div>
     </div>
   );
