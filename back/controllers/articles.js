@@ -1,9 +1,10 @@
-const { Article } = require("../models/indexq");
+const { Article } = require("../models/index");
 
-export const findSingleArticle = (req, res) => {
-  Article.findOne({ articleURL: req.params.title }).then((article) =>
-    res.send(article)
-  );
+const findSingleArticle = (req, res) => {
+  Article.findOne({ articleURL: req.params.title })
+    .populate("articleAuthor")
+    .populate("tags")
+    .then((article) => res.send(article));
 };
 
 module.exports = { findSingleArticle };
