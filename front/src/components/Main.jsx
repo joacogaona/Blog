@@ -1,16 +1,17 @@
 import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import HomeContainer from "../containers/HomeContainer";
 
 const Main = () => {
   return (
     <div>
       <div>{/* <Route path="/" component={NavBarContainer} /> */}</div>
       <div>
-        {/*  <Switch>
+        <Switch>
           <Route path="/home" component={HomeContainer} />
-          <Route path="/article" component={ArticleContainer} />
 
           <Redirect to="/home"></Redirect>
-        </Switch> */}
+        </Switch>
       </div>
     </div>
   );
