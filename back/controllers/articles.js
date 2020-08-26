@@ -9,11 +9,9 @@ const findSingleArticle = (req, res) => {
 
 const findArticles = (req, res) => {
   Article.find()
-    /* .populate("articleAuthor") */
+    .populate("articleAuthor")
     .populate("tags")
-    /* .populate("categories") */
     .then((articles) => {
-      console.log(articles, "ARRE");
       res.send(articles);
     });
 };

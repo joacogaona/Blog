@@ -16,7 +16,7 @@ const getArticles = (articles) => {
 };
 
 export const fetchArticles = () => (dispatch) => {
-  axios.get("/api/articles").then((res) => console.log(res.data, "RESDATA"));
+  axios.get("/api/articles").then((res) => dispatch(getArticles(res.data)));
 };
 
 export const fetchSingleArticle = (title) => (dispatch) =>

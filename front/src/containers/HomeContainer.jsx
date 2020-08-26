@@ -4,7 +4,7 @@ import Home from "../components/Home";
 import { fetchArticles } from "../store/actions/articles";
 
 export default () => {
-  const articles = useSelector((state) => state.articlesReducer.articles);
+  const articles = useSelector((state) => state.articles.articles);
   const dispatch = useDispatch();
 
   useEffect(() => {
