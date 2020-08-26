@@ -9,7 +9,7 @@ const Home = ({ articles }) => {
         articles.map((article) => {
           return (
             <div key={article._id}>
-              <Link to={`/article/${article.articleURL}}`}>
+              <Link to={`/article/${article.articleURL}`}>
                 <h2>{article.articleTitle}</h2>
                 <div>{article.articleDescription}</div>
                 <div>{article.articleContent}</div>
