@@ -5,7 +5,7 @@ const initialState = {
   articles: [],
 };
 
-const articlesReducer = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case GET_SINGLE_ARTICLE:
       return { ...state, article: action.article };
@@ -16,5 +16,3 @@ const articlesReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default articlesReducer;

@@ -31,7 +31,7 @@ var articleSchema = new Schema({
   articleAuthor: [
     {
       type: Schema.Types.ObjectId,
-      ref: "authors",
+      ref: "users",
     },
   ],
 
