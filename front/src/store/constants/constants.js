@@ -1,1 +1,2 @@
 export const GET_SINGLE_ARTICLE = "GET_SINGLE_ARTICLE";
+export const GET_ARTICLES = "GET_ARTICLES";

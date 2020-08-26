@@ -9,10 +9,9 @@ const Main = () => {
       <div>{/* <Route path="/" component={NavBarContainer} /> */}</div>
       <div>
         <Switch>
-          <Route path="/home" component={HomeContainer} />
-
+          <Route exact path="/articles" component={HomeContainer} />
           <Route path="/article/:title" component={SingleArticleContainer} />
-          <Redirect to="/home"></Redirect>
+          <Redirect to="/articles"></Redirect>
         </Switch>
       </div>
     </div>
