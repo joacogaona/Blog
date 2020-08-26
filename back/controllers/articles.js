@@ -7,4 +7,13 @@ const findSingleArticle = (req, res) => {
     .then((article) => res.send(article));
 };
 
-module.exports = { findSingleArticle };
+const findArticles = (req, res) => {
+  Article.find()
+    .populate("articleAuthor")
+    .populate("tags")
+    .then((articles) => {
+      res.send(articles);
+    });
+};
+
+module.exports = { findSingleArticle, findArticles };
