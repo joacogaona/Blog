@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import HomeContainer from "../containers/HomeContainer";
 import SingleArticleContainer from "../containers/SingleArticleContainer";
 import NavbarContainer from "../containers/NavbarContainer";
+import FooterContainer from "../containers/FooterContainer";
 
 const Main = () => {
   return (
@@ -16,6 +17,9 @@ const Main = () => {
           <Route path="/article/:title" component={SingleArticleContainer} />
           <Redirect to="/articles"></Redirect>
         </Switch>
+      </div>
+      <div>
+        <Route path="/" component={FooterContainer} />
       </div>
     </div>
   );
