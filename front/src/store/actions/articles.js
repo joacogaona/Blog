@@ -23,3 +23,18 @@ export const fetchSingleArticle = (title) => (dispatch) =>
   axios
     .get(`/api/articles/${title}`)
     .then((res) => dispatch(getSingleArticle(res.data)));
+
+export const searchArticles = (query) => (dispatch) =>
+  axios.get(`/api/articles/search?query=${query}`).then((res) => {
+    return dispatch(getArticles(res.data));
+  });
+
+export const fetchArticlesByTag = (tag) => (dispatch) =>
+  axios.get(`/api/articles/tag/${tag}`).then((res) => {
+    return dispatch(getArticles(res.data));
+  });
+
+export const fetchArticlesByAuthor = (author) => (dispatch) =>
+  axios.get(`/api/articles/author/${author}`).then((res) => {
+    return dispatch(getArticles(res.data));
+  });

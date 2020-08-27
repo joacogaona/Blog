@@ -2,7 +2,7 @@ const Article = require("../models/articles");
 require("../config/db");
 
 const charmander = {
-  articleTitle: "Articulo CINCO",
+  articleTitle: "Articulo SIETE",
 
   metaDescription:
     "UNO - Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable",
@@ -13,11 +13,16 @@ const charmander = {
   articleContent:
     " UNO -Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás.Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás.Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás. Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás.Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás.Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás.Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás.Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás.Javascript es tipado dinámico o dynamic typing: no tenemos que decirle al intérprete que tipo de datos contiene una variable, él lo calcula por sí mismo.Podemos tener una variable con un número y luego guardar una string en la misma variable .castear.Datos nativos, son tipos de datos básicos que vienen previamente definidos con el lenguaje: (Inmutables.Puedo pisarlos por nuevos nomás",
 
-  articleURL: "articulo-cinco",
+  articleURL: "articulo-siete",
 
-  articleAuthor: {
-    _id: "5f45291beccda247a931cc19",
-  },
+  articleAuthor: [
+    {
+      _id: "5f45291beccda247a931cc19",
+    },
+    {
+      _id: "5f45291beccda247a931cc18",
+    },
+  ],
   tags: [
     {
       _id: "5f45292cae4d0f47c2a1cf8b",

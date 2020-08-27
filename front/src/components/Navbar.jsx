@@ -1,13 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ categories }) => {
+const Navbar = ({
+  categories,
+  inputValue,
+  disabled,
+  handleChange,
+  handleSubmitSearch,
+}) => {
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <div>
-        <img
-          src="http://www.cantabriatic.com/wp-content/uploads/2015/11/javascript-shield-logo-300x169.png"
-          style={{ width: "30%" }}
-        />
+        <Link to="/home">
+          <img
+            src="http://www.cantabriatic.com/wp-content/uploads/2015/11/javascript-shield-logo-300x169.png"
+            style={{ width: "30%" }}
+          />
+        </Link>
       </div>
       <div>
         <h1>JOACO G PROGRAMA</h1>
@@ -26,14 +35,16 @@ const Navbar = ({ categories }) => {
         </select>
       </div>
       <div>
-        <form>
-          <label htmlFor="fname">Buscar:</label>
+        <form onSubmit={handleSubmitSearch}>
           <input
+            onChange={handleChange}
             type="text"
-            id="fname"
-            name="fname"
             placeholder="Quiero buscar..."
+            value={inputValue}
           />
+          <button type="submit" disabled={disabled}>
+            Buscar
+          </button>
         </form>
       </div>
     </div>
