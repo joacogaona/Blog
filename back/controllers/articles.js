@@ -1,14 +1,14 @@
 const { Article, Tag, User } = require("../models/index");
 
 const findSingleArticle = (req, res) => {
-  Article.findOne({ articleURL: req.params.title })
+  Article.findOne({ articleURL: req.params.title, isEliminated: false })
     .populate("articleAuthor")
     .populate("tags")
     .then((article) => res.send(article));
 };
 
 const findArticles = (req, res) => {
-  Article.find()
+  Article.find({ isEliminated: false })
     .populate("articleAuthor")
     .populate("tags")
     .then((articles) => {

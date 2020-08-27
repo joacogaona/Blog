@@ -6,6 +6,7 @@ import NavbarContainer from "../containers/NavbarContainer";
 import ArticlesByTagContainer from "../containers/ArticlesByTagContainer";
 import ArticlesByAuthorContainer from "../containers/ArticlesByAuthorContainer";
 import SearchContainer from "../containers/SearchContainer";
+import FooterContainer from "../containers/FooterContainer";
 
 const Main = () => {
   return (
@@ -27,6 +28,9 @@ const Main = () => {
           <Route path="/article/:title" component={SingleArticleContainer} />
           <Redirect to="/articles"></Redirect>
         </Switch>
+      </div>
+      <div>
+        <Route path="/" component={FooterContainer} />
       </div>
     </div>
   );
