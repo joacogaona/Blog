@@ -28,9 +28,9 @@ const Home = ({ articles }) => {
                     <div key={author._id}>
                       <div> {author.firstName} </div>
                       <div> {author.lastName} </div>
-                      <div>
+                      {/* <div>
                         <img src={author.profilePicture} />
-                      </div>
+                      </div> */}
                     </div>
                   );
                 })}

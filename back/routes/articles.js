@@ -1,8 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const { findSingleArticle, findArticles } = require("../controllers/articles");
+const {
+  findSingleArticle,
+  findArticles,
+  searchArticles,
+  searchArticlesByTag,
+  searchArticlesByAuthor,
+  createArticle,
+  editArticle,
+} = require("../controllers/articles");
 
+router.get("/search", searchArticles);
+router.get("/tag/:tag", searchArticlesByTag);
+router.get("/author/:author", searchArticlesByAuthor);
 router.get("/", findArticles);
 router.get("/:title", findSingleArticle);
+router.post("/create", createArticle);
+router.patch("/edit", editArticle);
 
 module.exports = router;

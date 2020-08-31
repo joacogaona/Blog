@@ -62,7 +62,11 @@ var articleSchema = new Schema({
 articleSchema.pre("save", async function save(next) {
   if (!this.isModified("articleTitle")) return next();
   try {
-    this.articleURL = this.articleTitle.replace(/\s+/g, "-").replace(/\W/g, "");
+    this.articleURL = this.articleTitle
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "-")
+      .toLowerCase();
     return next();
   } catch (err) {
     return next(err);
