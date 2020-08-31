@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import { fetchCategories } from "../store/actions/categories";
-import { searchArticles } from "../store/actions/articles";
+import { logOut } from "../store/actions/users";
 
 export default (props) => {
   const categories = useSelector((state) => state.categories.categories);
+  const user = useSelector((state) => state.users.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,6 +31,10 @@ export default (props) => {
     setInputValue("");
   };
 
+  const handleLogout = () => {
+    dispatch(logOut(user.username, user.password));
+  };
+
   return (
     <div>
       <Navbar
@@ -38,6 +43,8 @@ export default (props) => {
         disabled={disabled}
         handleSubmitSearch={handleSubmitSearch}
         handleChange={handleChange}
+        user={user}
+        handleLogout={handleLogout}
       />
     </div>
   );

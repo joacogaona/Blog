@@ -8,16 +8,18 @@ const SingleProduct = ({ article, handleSearchByTag }) => {
       <Helmet>
         <title>{article.articleTitle}</title>
         <meta name="description" content={`${article.metaDescription}`} />
+        <meta name="robots" content="index,follow"></meta>
         <link
           rel="canonical"
           href={`http://localhost:3300/article/${article.articleURL}`}
         />
       </Helmet>
+
       <div>
-        <h1>{article.articleTitle}</h1>
-        <p>ACA va la descripción</p>
-        <img src={article.imageArticle} alt={article.articleURL} />
-        <p>{article.articleContent}</p>
+        <div
+          contentEditable="true"
+          dangerouslySetInnerHTML={{ __html: `${article.articleContent}` }}
+        ></div>
         {article.articleAuthor && article.articleAuthor.length > 1 ? (
           <p>Autores:</p>
         ) : (

@@ -7,6 +7,8 @@ const Navbar = ({
   disabled,
   handleChange,
   handleSubmitSearch,
+  user,
+  handleLogout,
 }) => {
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
@@ -46,6 +48,17 @@ const Navbar = ({
             Buscar
           </button>
         </form>
+      </div>
+      <div>
+        {user._id && user.role === "admin" ? (
+          <Link to="/articles" onClick={handleLogout}>
+            <p>Cerrar Sesión</p>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <p>Iniciar Sesión</p>
+          </Link>
+        )}
       </div>
     </div>
   );

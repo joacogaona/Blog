@@ -72,10 +72,31 @@ const searchArticles = (req, res) => {
   });
 };
 
+const createArticle = (req, res) => {
+  Article.create(req.body).then((articleCreated) => {
+    Article.findById(articleCreated._id)
+      .populate("articleAuthor")
+      .populate("tags")
+      .then((article) => res.send(article));
+  });
+};
+
+const editArticle = (req, res) => {
+  Article.updateOne({ _id: req.body._id }, req.body)
+    .then(() =>
+      Article.findById(req.body._id).populate("articleAuthor").populate("tags")
+    )
+    .then((article) => {
+      res.send(article);
+    });
+};
+
 module.exports = {
   findSingleArticle,
   findArticles,
   searchArticles,
   searchArticlesByTag,
   searchArticlesByAuthor,
+  createArticle,
+  editArticle,
 };
