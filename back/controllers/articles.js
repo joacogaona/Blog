@@ -91,6 +91,17 @@ const editArticle = (req, res) => {
     });
 };
 
+const deleteArticle = (req, res) => {
+  Article.deleteOne({ _id: req.params.id }).then(() => {
+    Article.find({ isEliminated: false })
+      .populate("articleAuthor")
+      .populate("tags")
+      .then((articles) => {
+        res.send(articles);
+      });
+  });
+};
+
 module.exports = {
   findSingleArticle,
   findArticles,
@@ -99,4 +110,5 @@ module.exports = {
   searchArticlesByAuthor,
   createArticle,
   editArticle,
+  deleteArticle,
 };

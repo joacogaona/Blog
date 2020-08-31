@@ -1,9 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ArticlesByTag = ({ articles, firstName, lastName, author }) => {
   return (
     <div>
+      <div>
+        <Helmet>
+          <title>
+            JoacoGPrograma - Artículos de {firstName} {lastName}
+          </title>
+          <meta
+            name="description"
+            content={`Encontrá en esta sección de JoacoGPrograma muchísimos artículos escritos por ${firstName} ${lastName}. Te acompañamos en todo tu camino para ser programador`}
+          />
+          <meta name="robots" content="index,follow"></meta>
+          <link
+            rel="canonical"
+            href={`http://localhost:3300/author/${firstName.toLowerCase()}-${lastName.toLowerCase()}`}
+          />
+        </Helmet>
+      </div>
       {articles.length === 0 ? (
         <h1>No se encontrnó ningún artículo de {author}</h1>
       ) : (

@@ -12,6 +12,7 @@ import CreateArticleContainer from "../containers/CreateArticleContainer";
 import EditArticleContainer from "../containers/EditArticleContainer";
 import { useDispatch } from "react-redux";
 import { cookieLogger } from "../store/actions/users";
+import AdminPanelContainer from "../containers/AdminPanelContainer";
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -27,8 +28,8 @@ const Main = () => {
       </div>
       <div>
         <Switch>
-          <Route exact path="/login" component={LoginContainer} />
           <Route exact path="/articles" component={HomeContainer} />
+          <Route exact path="/login" component={LoginContainer} />
           <Route exact path="/search/:query" component={SearchContainer} />
           <Route exact path="/tag/:tag" component={ArticlesByTagContainer} />
           <Route
@@ -48,6 +49,8 @@ const Main = () => {
           />
 
           <Route path="/article/:title" component={SingleArticleContainer} />
+          <Route path="/admin/panel" component={AdminPanelContainer} />
+
           <Redirect to="/articles"></Redirect>
         </Switch>
       </div>

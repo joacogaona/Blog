@@ -9,9 +9,9 @@ const {
   cookieUser,
 } = require("../controllers/users");
 
+router.get("/cookieuser", cookieUser);
 router.post("/login", passport.authenticate("local"), userLogin);
 router.post("/create", registerUser);
 router.post("/logout", userLogout);
-router.get("/cookieuser", cookieUser);
 
 module.exports = router;

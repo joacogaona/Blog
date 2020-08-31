@@ -24,9 +24,9 @@ const userLogout = (req, res) => {
 
 const cookieUser = (req, res) => {
   if (req.isAuthenticated()) {
-    res.json(req.user);
+    res.send(req.user);
   } else {
-    res.json({});
+    res.send({});
   }
 };
 

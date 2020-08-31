@@ -34,5 +34,5 @@ export const logOut = () => (dispatch) =>
 
 export const cookieLogger = () => (dispatch) =>
   axios.get("/api/users/cookieuser").then((res) => {
-    dispatch(loginUser(res.data));
+    dispatch(logUser(res.data));
   });
