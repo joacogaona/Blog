@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Footer from "../components/Footer";
-import { fetchCategories } from "../store/actions/categories";
-import { registerUser } from "../store/actions/users";
+import Footer from "./Footer";
+import { fetchCategories } from "../../store/actions/categories";
+import { registerUser } from "../../store/actions/users";
 
 export default ({ match }) => {
   const categories = useSelector((state) => state.categories.categories);

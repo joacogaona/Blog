@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import HomeContainer from "../containers/HomeContainer";
-import SingleArticleContainer from "../containers/SingleArticleContainer";
-import NavbarContainer from "../containers/NavbarContainer";
-import ArticlesByTagContainer from "../containers/ArticlesByTagContainer";
-import ArticlesByAuthorContainer from "../containers/ArticlesByAuthorContainer";
-import SearchContainer from "../containers/SearchContainer";
-import FooterContainer from "../containers/FooterContainer";
-import LoginContainer from "../containers/LoginContainer";
-import CreateArticleContainer from "../containers/CreateArticleContainer";
-import EditArticleContainer from "../containers/EditArticleContainer";
+import HomeContainer from "../screens/home/HomeContainer";
+import SingleArticleContainer from "../screens/singleArticle/SingleArticleContainer";
+import NavbarContainer from "../screens/navbar/NavbarContainer";
+import ArticlesByTagContainer from "../screens/articlesByTag/ArticlesByTagContainer";
+import ArticlesByAuthorContainer from "../screens/articlesByAuthor/ArticlesByAuthorContainer";
+import SearchContainer from "../screens/search/SearchContainer";
+import FooterContainer from "../screens/footer/FooterContainer";
+import LoginContainer from "../screens/login/LoginContainer";
+import CreateArticleContainer from "../screens/createArticle/CreateArticleContainer";
+import EditArticleContainer from "../screens/editArticle/EditArticleContainer";
 import { useDispatch } from "react-redux";
 import { cookieLogger } from "../store/actions/users";
-import AdminPanelContainer from "../containers/AdminPanelContainer";
-import Team from "./Team";
+import AdminPanelContainer from "../screens/adminPanel/AdminPanelContainer";
+import Team from "../screens/team/Team";
 
 const Main = () => {
   const dispatch = useDispatch();

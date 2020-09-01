@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Login from "../components/Login";
-import { loginUser } from "../store/actions/users";
+import Login from "./Login";
+import { loginUser } from "../../store/actions/users";
 
 export default (props) => {
   const dispatch = useDispatch();
