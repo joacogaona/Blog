@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-const SingleProduct = ({ article, handleSearchByTag }) => {
+const SingleArticle = ({ article, handleSearchByTag }) => {
   return (
     <>
       <Helmet>
@@ -42,11 +42,7 @@ const SingleProduct = ({ article, handleSearchByTag }) => {
         {article.tags &&
           article.tags.map((tag) => {
             return (
-              <Link
-                key={tag._id}
-                to={`/tag/${tag.tagTitle}`}
-                onClick={() => handleSearchByTag(tag._id)}
-              >
+              <Link key={tag._id} to={`/tag/${tag.tagTitle}`}>
                 <p>#{tag.tagTitle}</p>
               </Link>
             );
@@ -56,4 +52,4 @@ const SingleProduct = ({ article, handleSearchByTag }) => {
   );
 };
 
-export default SingleProduct;
+export default SingleArticle;

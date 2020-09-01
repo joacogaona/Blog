@@ -4,7 +4,7 @@ const userLogin = (req, res) => {
   res.status(201).send(req.user);
 };
 
-const registerUser = (req, res) => {
+const userRegister = (req, res) => {
   User.findOne({
     username: req.body.username,
   }).then((foundUser) => {
@@ -24,15 +24,15 @@ const userLogout = (req, res) => {
 
 const cookieUser = (req, res) => {
   if (req.isAuthenticated()) {
-    res.json(req.user);
+    res.send(req.user);
   } else {
-    res.json({});
+    res.send({});
   }
 };
 
 module.exports = {
   userLogin,
-  registerUser,
   userLogout,
   cookieUser,
+  userRegister,
 };

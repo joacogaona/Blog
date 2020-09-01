@@ -30,12 +30,8 @@ const searchArticlesByTag = (req, res) => {
 const searchArticlesByAuthor = (req, res) => {
   const [firstName, lastName] = req.params.author.split("-");
   User.findOne({
-    firstName: firstName.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    }),
-    lastName: lastName.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    }),
+    firstName: firstName,
+    lastName: lastName,
   }).then((author) => {
     Article.find({ articleAuthor: author._id })
       .populate("articleAuthor")
@@ -91,6 +87,17 @@ const editArticle = (req, res) => {
     });
 };
 
+const deleteArticle = (req, res) => {
+  Article.deleteOne({ _id: req.params.id }).then(() => {
+    Article.find({ isEliminated: false })
+      .populate("articleAuthor")
+      .populate("tags")
+      .then((articles) => {
+        res.send(articles);
+      });
+  });
+};
+
 module.exports = {
   findSingleArticle,
   findArticles,
@@ -99,4 +106,5 @@ module.exports = {
   searchArticlesByAuthor,
   createArticle,
   editArticle,
+  deleteArticle,
 };

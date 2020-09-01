@@ -83,3 +83,8 @@ export const editArticle = (
       tags: tag,
     })
     .then((res) => dispatch(getSingleArticle(res.data)));
+
+export const deleteArticle = (id) => (dispatch) =>
+  axios.delete(`/api/articles/delete/${id}`).then((res) => {
+    return dispatch(getArticles(res.data));
+  });

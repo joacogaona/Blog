@@ -26,8 +26,8 @@ const Login = ({
           placeholder="Contraseña"
           value={password}
         />
-        <button type="submit" disabled={!userOk && !passOk}>
-          Buscar
+        <button type="submit" disabled={!(userOk && passOk)}>
+          Enviar
         </button>
       </form>
       <div>{user.message ? <p>{user.message}</p> : null}</div>

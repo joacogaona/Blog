@@ -1,9 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ArticlesByTag = ({ articles, tag }) => {
   return (
     <div>
+      <div>
+        <Helmet>
+          <title>
+            JoacoGPrograma - Todo lo que tenés que saber sobre {tag}
+          </title>
+          <meta
+            name="description"
+            content={`Encontrá en esta sección de JoacoGPrograma muchísimos artículos sobre ${tag}. Te acompañamos en todo tu camino para ser programador`}
+          />
+          <meta name="robots" content="index,follow"></meta>
+          <link rel="canonical" href={`http://localhost:3300/tag/${tag}`} />
+        </Helmet>
+      </div>
       {articles.length === 0 ? (
         <h1>No se encontró ningún artículo sobre {tag}</h1>
       ) : (
