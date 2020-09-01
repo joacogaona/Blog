@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../components/Navbar";
-import { fetchCategories } from "../store/actions/categories";
-import { logOut } from "../store/actions/users";
+import Navbar from "./Navbar";
+import { fetchCategories } from "../../store/actions/categories";
+import { logOut } from "../../store/actions/users";
 
 export default (props) => {
   const categories = useSelector((state) => state.categories.categories);

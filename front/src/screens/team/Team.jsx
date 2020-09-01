@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import img from "../../../../back/public/fotoJoacoGaona.jpeg";
 
 const Team = () => {
   return (
@@ -8,7 +9,7 @@ const Team = () => {
       <h1>Equipo</h1>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div>
-          <img src={`/${__dirname}/../back/public`} />
+          <img src={`${img}`} />
           <p>Joaquín Gaona</p>
           <p>Full Stack Developer - Youtuber - Administrador de Empresas</p>
           <p>"Alguna frase copada</p>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ArticlesByTag from "../components/ArticlesByTag";
-import { fetchArticlesByTag } from "../store/actions/articles";
+import ArticlesByTag from "./ArticlesByTag";
+import { fetchArticlesByTag } from "../../store/actions/articles";
 
 export default ({ match }) => {
   const articles = useSelector((state) => state.articles.articles);

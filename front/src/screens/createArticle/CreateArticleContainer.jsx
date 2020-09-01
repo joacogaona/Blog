@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import EditArticle from "../components/EditArticle";
-import { editArticle, fetchSingleArticle } from "../store/actions/articles";
-import { fetchCategories } from "../store/actions/categories";
-import { fetchTags } from "../store/actions/tags";
+import CreateArticle from "./CreateArticle";
+import { createArticle } from "../../store/actions/articles";
+import { fetchCategories } from "../../store/actions/categories";
+import { fetchTags } from "../../store/actions/tags";
 
-export default ({ match, history }) => {
+export default (props) => {
   const tags = useSelector((state) => state.tags.tags);
-  const article = useSelector((state) => state.articles.article);
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -16,12 +15,12 @@ export default ({ match, history }) => {
   const [category, setCategory] = useState("");
   const [tag, setTag] = useState([]);
   const [tagId, setTagId] = useState([]);
-  const [tagOk, setTagOk] = useState(true);
-  const [catOk, setCatOk] = useState(true);
-  const [contentOk, setContentOk] = useState(true);
-  const [metaDescOk, setMetaDescOk] = useState(true);
-  const [titleOk, setTitleOk] = useState(true);
-  const [descOk, setDescOk] = useState(true);
+  const [tagOk, setTagOk] = useState(false);
+  const [catOk, setCatOk] = useState(false);
+  const [contentOk, setContentOk] = useState(false);
+  const [metaDescOk, setMetaDescOk] = useState(false);
+  const [titleOk, setTitleOk] = useState(false);
+  const [descOk, setDescOk] = useState(false);
   const user = useSelector((state) => state.users.user);
 
   const categories = useSelector((state) => state.categories.categories);
@@ -71,6 +70,7 @@ export default ({ match, history }) => {
   };
 
   const handleTagId = (id) => {
+    console.log(id, "ID DEL TAG");
     if (tagId.includes(id)) {
       const newTagId = tagId.filter((cat) => {
         if (cat !== id) {
@@ -86,42 +86,30 @@ export default ({ match, history }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     return dispatch(
-      editArticle(
-        article._id,
+      createArticle(
         title,
         description,
         metaDesc,
         content,
         category,
-        tagId
+        tagId,
+        // user._id
+        "5f497af893859a7b6a00db24"
       )
     ).then((data) => {
-      if (data.article._id) history.push(`/article/${data.article.articleURL}`);
+      if (data.article._id)
+        props.history.push(`/article/${data.article.articleURL}`);
     });
   };
 
   useEffect(() => {
     dispatch(fetchCategories());
-    dispatch(fetchTags())
-      .then(() => dispatch(fetchSingleArticle(match.params.title)))
-      .then((data) => {
-        const article = data.article;
-        setTitle(article.articleTitle);
-        setDescription(article.articleDescription);
-        setMetaDesc(article.metaDescription);
-        setContent(article.articleContent);
-        setCategory(article.categories);
-        article.tags.map((singleTag) => {
-          setTag([...tag, singleTag.tagTitle]);
-          setTagId([...tagId, singleTag._id]);
-        });
-      });
+    dispatch(fetchTags());
   }, []);
 
   return (
     <div>
-      <EditArticle
-        article={article}
+      <CreateArticle
         title={title}
         description={description}
         metaDesc={metaDesc}
