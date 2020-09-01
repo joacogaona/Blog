@@ -50,14 +50,16 @@ const Navbar = ({
         </form>
       </div>
       <div>
-        {user._id && user.role === "admin" ? (
+        {user._id ? (
           <div>
             <Link to="/articles" onClick={handleLogout}>
               <p>Cerrar Sesión</p>
             </Link>
-            <Link to="/admin/panel">
-              <p>Configuración</p>
-            </Link>
+            {user.role === "admin" ? (
+              <Link to="/admin/panel">
+                <p>Configuración</p>
+              </Link>
+            ) : null}
           </div>
         ) : (
           <Link to="/login">

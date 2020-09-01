@@ -36,3 +36,20 @@ export const cookieLogger = () => (dispatch) =>
   axios.get("/api/users/cookieuser").then((res) => {
     dispatch(logUser(res.data));
   });
+
+export const registerUser = (firstName, lastName, username, password) => (
+  dispatch
+) =>
+  axios
+    .post("/api/users/register", {
+      username: username,
+      firstName: firstName,
+      lastName: lastName,
+      password: password,
+    })
+    .then((res) => {
+      if (res.data._id) return dispatch(logUser({ message: "Register Ok" }));
+    })
+    .catch(() =>
+      dispatch(logUser({ message: "Este Correo ya ha sido registrado" }))
+    );

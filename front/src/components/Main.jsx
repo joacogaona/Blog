@@ -13,6 +13,7 @@ import EditArticleContainer from "../containers/EditArticleContainer";
 import { useDispatch } from "react-redux";
 import { cookieLogger } from "../store/actions/users";
 import AdminPanelContainer from "../containers/AdminPanelContainer";
+import Team from "./Team";
 
 const Main = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const Main = () => {
             path="/admin/edit-article/:title"
             component={EditArticleContainer}
           />
+          <Route exact path="/team" component={Team} />
           <Route
             exact
             path="/author/:author"
