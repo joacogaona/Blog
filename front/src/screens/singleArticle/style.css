@@ -1,0 +1,103 @@
+body {
+  background-color: #110C1E
+}
+.title {
+  font-size: 35px;
+  color: #fff5b2;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.banner {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.content {
+  color: white;
+  margin-top: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.autorName {
+  color: #73a6d9;
+  text-align: center;
+  font-size: 20px;
+}
+.autor {
+  color: #a5cdde;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.searchMore {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchMoreText {
+  font-size: 30px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.searchMoreImage {
+  width: 250px;
+  height: 150px;
+}
+
+.lupa {
+  background: #ffe864;
+  border-radius: 20px;
+  padding: 4px;
+  margin-left: 10px;
+}
+
+.searchMoreImages {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.searchMoreImageText {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 500;
+  color: white;
+}
+
+.searchMoreImageContainer {
+  margin-top: 20px;
+}
+
+.tags {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.tag {
+  background: #3d5092;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #081e56;
+  font-size: 20px;
+}
+
+
+.suscriptionContainer{
+    background: #F4F8FB;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5%;
+    padding-bottom: 55px;
+}

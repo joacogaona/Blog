@@ -1,0 +1,42 @@
+.footerContainer {
+  display: flex;
+  background: #161721;
+  margin-top: 5%;
+  flex-direction: column;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  margin-top: 15px;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.links {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+.linkText{
+    text-decoration: none;
+    color: white;
+}

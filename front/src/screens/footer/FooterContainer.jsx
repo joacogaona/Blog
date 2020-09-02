@@ -54,7 +54,6 @@ export default ({ match }) => {
   }, []);
 
   return (
-    <div>
       <Footer
         categories={categories}
         firstName={firstName}
@@ -71,6 +70,5 @@ export default ({ match }) => {
         password={password}
         passOk={passOk}
       />
-    </div>
   );
 };
