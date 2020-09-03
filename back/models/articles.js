@@ -22,6 +22,10 @@ var articleSchema = new Schema({
     required: true,
   },
 
+  readingTime: {
+    type: Number,
+  },
+
   imageArticle: {
     type: String,
     default:
