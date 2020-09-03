@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import "./style.css";
 
 const ArticlesByTag = ({ articles, tag }) => {
   return (
@@ -21,40 +22,48 @@ const ArticlesByTag = ({ articles, tag }) => {
       {articles.length === 0 ? (
         <h1>No se encontró ningún artículo sobre {tag}</h1>
       ) : (
-        <div>
-          <h1>Artículos sobre {tag}</h1>
-          {articles.map((article) => {
-            return (
-              <div key={article._id}>
-                <Link to={`/article/${article.articleURL}`}>
-                  <h2>{article.articleTitle}</h2>
-                  <div>{article.articleDescription}</div>
-                  <div>{article.articleContent}</div>
-                  <div>
-                    <img src={article.imageArticle} />
-                  </div>
-                </Link>
-                <div>
-                  {article.tags.map((tag) => {
-                    return <div key={tag._id}> {tag.tagTitle} </div>;
-                  })}
-                </div>
-                <div>
-                  {article.articleAuthor.map((author) => {
-                    return (
-                      <div key={author._id}>
-                        <div> {author.firstName} </div>
-                        <div> {author.lastName} </div>
-                        <div>
-                          <img src={author.profilePicture} />
-                        </div>
+        <div className="card-container">
+          {articles &&
+            articles.map((article) => {
+              return (
+                <div className="card">
+                  <Link
+                    to={`/article/${article.articleURL}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <img
+                      className="cardImage"
+                      src={article.imageArticle}
+                      alt="foto"
+                    />
+
+                    <div className="card-content">
+                      <h3>{article.articleTitle}</h3>
+
+                      <div className="authors-container">
+                        {article.articleAuthor.map((author) => {
+                          return (
+                            <div className="author">
+                              <img
+                                className="avatar"
+                                src="https://media.gettyimages.com/photos/punk-portrait-picture-id939681086?s=612x612"
+                                alt="foto"
+                              />
+
+                              <p className="author-name">
+                                {author.firstName} {author.lastName}
+                              </p>
+                            </div>
+                          );
+                        })}
                       </div>
-                    );
-                  })}
+
+                      <p className="cardInfo">{article.articleDescription}</p>
+                    </div>
+                  </Link>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       )}
     </div>
