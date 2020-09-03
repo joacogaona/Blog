@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Search, ExpandMore } from "@material-ui/icons";
 import "./style.css";
 
 const Navbar = ({
@@ -10,59 +11,91 @@ const Navbar = ({
   handleSubmitSearch,
   user,
   handleLogout,
+  handleShowCategories,
+  showCategories,
+  tags,
 }) => {
   return (
     <div className="container">
-      <div className="violet"></div>
-      <div className="searchContainer">
-        <div className="brandNameContainer">
-          <h1 className="brandName">JoacoGPrograma</h1>
-        </div>
-        <div>
-          <label htmlFor="categories">Categorías</label>
-          <select name="cars" id="categories">
-            {categories &&
-              categories.map((category) => {
-                return (
-                  <option key={category._id} value={category.categoryTitle}>
-                    {category.categoryTitle}
-                  </option>
-                );
-              })}
-          </select>
-        </div>
-        <div>
-          <form onSubmit={handleSubmitSearch}>
-            <input
-              onChange={handleChange}
-              type="text"
-              placeholder="Quiero buscar..."
-              value={inputValue}
-            />
-            <button type="submit" disabled={disabled}>
-              Buscar
-            </button>
-          </form>
+      <div className="violet">
+        <div className="user">
+          {user._id ? (
+            <div className="userLogged">
+              <div>
+                <button onClick={handleLogout} className="logout">
+                  <p className="userOption">Cerrar Sesión</p>
+                </button>
+              </div>
+              {user.role === "admin" ? (
+                <div>
+                  <Link to="/admin/panel" className="userOption">
+                    <p>Configuración</p>
+                  </Link>
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <Link to="/login" className="userOption">
+              <p>Iniciar Sesión</p>
+            </Link>
+          )}
         </div>
       </div>
-
-      <div>
-        {user._id ? (
-          <div>
-            <Link to="/articles" onClick={handleLogout}>
-              <p>Cerrar Sesión</p>
-            </Link>
-            {user.role === "admin" ? (
-              <Link to="/admin/panel">
-                <p>Configuración</p>
-              </Link>
-            ) : null}
-          </div>
-        ) : (
-          <Link to="/login">
-            <p>Iniciar Sesión</p>
+      <div className="searchContainer">
+        <div className="brandNameContainer">
+          <Link to="/articles" className="brandName">
+            <p>JoacoGPrograma</p>
           </Link>
-        )}
+        </div>
+
+        <div>
+          <form onSubmit={handleSubmitSearch} className="searchForm">
+            <div>
+              <input
+                className="inputSearch"
+                onChange={handleChange}
+                type="text"
+                placeholder="Quiero buscar..."
+                value={inputValue}
+              />
+            </div>
+            <div>
+              <Search type="submit" disabled={disabled} id="searchIcon" />
+            </div>
+          </form>
+        </div>
+        <div>
+          <div onClick={handleShowCategories} className="dropdownContainer">
+            <p className="categories">CATEGORIAS</p>
+            <ExpandMore id="expandIcon" />
+          </div>
+          {showCategories ? (
+            <div className="categoriesContainer">
+              {categories &&
+                categories.map((category) => {
+                  return (
+                    <Link id="singleCategory" to="/articles">
+                      <p key={category._id} value={category.categoryTitle}>
+                        {category.categoryTitle}
+                      </p>
+                    </Link>
+                  );
+                })}
+            </div>
+          ) : null}
+        </div>
+      </div>
+      <div className="tagsContainer">
+        {tags &&
+          tags.map((tag) => {
+            return (
+              <Link to="/articles" className="singleTag">
+                <p key={tag._id} value={tag.tagTitle}>
+                  # {tag.tagTitle}
+                </p>
+              </Link>
+            );
+          })}
       </div>
     </div>
   );
