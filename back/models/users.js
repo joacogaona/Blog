@@ -13,6 +13,10 @@ var userSchema = new Schema({
     type: String,
     required: true,
   },
+
+  userJob: {
+    type: String,
+  },
   isVerified: {
     type: Boolean,
     default: false,
