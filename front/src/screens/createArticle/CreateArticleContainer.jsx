@@ -70,7 +70,6 @@ export default (props) => {
   };
 
   const handleTagId = (id) => {
-    console.log(id, "ID DEL TAG");
     if (tagId.includes(id)) {
       const newTagId = tagId.filter((cat) => {
         if (cat !== id) {
