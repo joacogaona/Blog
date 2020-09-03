@@ -17,14 +17,14 @@ const SingleArticle = ({ article, handleSearchByTag }) => {
       </Helmet>
 
       <div>
-        <p className="title">{article.articleTitle}</p>
+        {/* <p className="title">{article.articleTitle}</p>
         <div className="banner">
           <img
             style={{ width: "100%" }}
             src="https://i1.wp.com/xiaomiuniverse.com/wp-content/uploads/2017/12/aprender-react.jpeg?fit=1024%2C341&ssl=1"
             alt="ImagenBlog"
           />
-        </div>
+        </div> */}
 
         <div
           className="content"

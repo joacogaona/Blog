@@ -66,8 +66,10 @@ const Navbar = ({
         </div>
         <div>
           <div onClick={handleShowCategories} className="dropdownContainer">
-            <p className="categories">CATEGORIAS</p>
-            <ExpandMore id="expandIcon" />
+            <p className="categories">
+              CATEGORIAS
+              <ExpandMore id="expandIcon" />
+            </p>
           </div>
           {showCategories ? (
             <div className="categoriesContainer">

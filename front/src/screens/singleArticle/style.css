@@ -1,5 +1,5 @@
 body {
-  background-color: #110C1E
+  background-color: #110c1e;
 }
 .title {
   font-size: 35px;
@@ -7,11 +7,19 @@ body {
   text-align: center;
   font-family: sans-serif;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .banner {
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-bottom: 30px;
+}
+
+.bannerImg {
+  width: 100%;
+}
+
+.text {
+  margin-bottom: 30px;
 }
 
 .content {
@@ -91,13 +99,21 @@ body {
   font-size: 20px;
 }
 
+.suscriptionContainer {
+  background: #f4f8fb;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 5%;
+  padding-bottom: 55px;
+}
 
-.suscriptionContainer{
-    background: #F4F8FB;
-    padding: 20px;
-    width: 30%;
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 5%;
-    padding-bottom: 55px;
+.subTitle {
+  font-size: 30px;
+  color: #fff5b2;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
