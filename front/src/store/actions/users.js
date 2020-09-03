@@ -24,7 +24,7 @@ export const loginUser = (username, password) => (dispatch) => {
     );
 };
 
-export const logOut = () => (dispatch) =>
+export const logOut = (username, password) => (dispatch) =>
   axios
     .post("/api/users/logout", {
       username: username,
