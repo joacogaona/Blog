@@ -89,11 +89,13 @@ const Navbar = ({
         {tags &&
           tags.map((tag) => {
             return (
-              <Link to="/articles" className="singleTag">
-                <p key={tag._id} value={tag.tagTitle}>
-                  # {tag.tagTitle}
-                </p>
-              </Link>
+              <button className="buttonTag">
+                <Link to={`/tag/${tag.tagTitle}`} className="singleTag">
+                  <p key={tag._id} value={tag.tagTitle}>
+                    # {tag.tagTitle}
+                  </p>
+                </Link>
+              </button>
             );
           })}
       </div>

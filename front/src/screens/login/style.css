@@ -1,0 +1,38 @@
+.input {
+  border: none;
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 10px;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  border: none;
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #6510c5;
+  font-weight: bold;
+  color: white;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: center;
+}

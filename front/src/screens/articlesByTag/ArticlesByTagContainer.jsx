@@ -12,7 +12,7 @@ export default ({ match }) => {
   useEffect(() => {
     if (tag) dispatch(fetchArticlesByTag(tag));
     else props.history.push("/articles");
-  }, []);
+  }, [tag]);
   return (
     <div>
       <ArticlesByTag articles={articles} tag={tag} />
