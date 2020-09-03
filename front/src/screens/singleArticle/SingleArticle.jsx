@@ -58,7 +58,7 @@ const SingleArticle = ({ article, handleSearchByTag }) => {
             <p className="searchMoreText">Qué leer a continuación </p>
             <IconoLupa className="lupa" />
           </div>
-          <hr style={{marginRight:'10%' , marginLeft:'10%'}}/>
+          <hr style={{ marginRight: "10%", marginLeft: "10%" }} />
           <div className="searchMoreImages">
             <div className="searchMoreImageContainer">
               <img
@@ -88,50 +88,53 @@ const SingleArticle = ({ article, handleSearchByTag }) => {
             </div>
           </div>
 
-          <hr  style={{marginRight:'10%' , marginLeft:'10%'}}/>
+          <hr style={{ marginRight: "10%", marginLeft: "10%" }} />
         </div>
 
-        {/* {article.tags &&
+        {article.tags &&
           article.tags.map((tag) => {
             return (
-              <div className='tags'>
-                <Link className='tag' key={tag._id} to={`/tag/${tag.tagTitle}`}>
+              <div className="tags">
+                <Link className="tag" key={tag._id} to={`/tag/${tag.tagTitle}`}>
                   <p>#{tag.tagTitle}</p>
                 </Link>
               </div>
             );
-          })} */}
-          <div className='tags'>
-            <a className='tag'>
-            <p>
-              Programacion
-              </p>
-              </a>
-              <a className='tag'>
-            <p>
-              Diseño
-              </p>
-              </a>
-              <a className='tag'>
-            <p>
-              Otros
-              </p>
-              </a>
-              <a className='tag'>
-            <p>
-              Negocio
-              </p>
-              </a>
-          </div>
+          })}
+        <div className="tags">
+          <a className="tag">
+            <p>Programacion</p>
+          </a>
+          <a className="tag">
+            <p>Diseño</p>
+          </a>
+          <a className="tag">
+            <p>Otros</p>
+          </a>
+          <a className="tag">
+            <p>Negocio</p>
+          </a>
+        </div>
 
-          <div className="suscriptionContainer">
-          <p style={{color:'black' , fontSize:30}}>Suscríbete a JoacoGPrograma</p>
-          <p style={{color:'#738A94', fontSize:18, marginTop:-15}}>Recibe los últimos artículos directamente en tu correo</p>
-         
-          <input type="text" style={{width:'50%', height:20}}/> <button style={{backgroundColor:'black' , color:'white',height:26, border:'none'}}>Suscribete</button>
-          
-          
-          </div>
+        <div className="suscriptionContainer">
+          <p style={{ color: "black", fontSize: 30 }}>
+            Suscríbete a JoacoGPrograma
+          </p>
+          <p style={{ color: "#738A94", fontSize: 18, marginTop: -15 }}>
+            Recibe los últimos artículos directamente en tu correo
+          </p>
+          <input type="text" style={{ width: "50%", height: 20 }} />{" "}
+          <button
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              height: 26,
+              border: "none",
+            }}
+          >
+            Suscribete
+          </button>
+        </div>
       </div>
     </>
   );
