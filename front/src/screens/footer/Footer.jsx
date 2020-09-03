@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const Footer = ({
   categories,
@@ -19,31 +20,41 @@ const Footer = ({
   handlePassword,
 }) => {
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      <div>
+    <div className="footerContainer">
+      {/* <div className="categories">
         {categories &&
           categories.map((category) => {
             return (
-              <option key={category._id} value={category.categoryTitle}>
+              <p key={category._id} value={category.categoryTitle}>
                 {category.categoryTitle}
-              </option>
+              </p>
             );
           })}
-      </div>
-      <div>
+      </div> */}
+      <div className="team">
         <h3>JoacoG Programa</h3>
-        <div>
-          <Link to="/team">
-            <p>Equipo</p>
+        
+         <div className='links'>
+           <Link to="/team" className="linkText">
+            Equipo
           </Link>
-        </div>
+         <Link to="#" className="linkText">
+            Instagram
+          </Link>
+        
+         <Link to="#" className="linkText">
+            Youtube
+          </Link>
+        
+         </div>
+        
       </div>
       {registerOk ? (
-        <div>
+        <div >
           <h3>Tu usuario ha sido Registrado!</h3>
         </div>
       ) : (
-        <div>
+        <div className='register'>
           <h3>Registrate y Suscribite a Nuestro Newsletter</h3>
           <form onSubmit={handleSubmit}>
             <div>
@@ -77,14 +88,18 @@ const Footer = ({
             </div>
             <div>
               <button
+              style={{marginTop:10, width: '50%', color:'white'}}
                 type="submit"
                 disabled={!(userOk && firstNameOk && lastNameOk && passOk)}
               >
-                {" "}
-                <p>Enviar</p>
+                <p > Enviar</p>
               </button>
             </div>
           </form>
+          <div>
+            <p>© 2020–2020 JoacoGP and Free Coders. <br/>
+              All copirights reserved.</p>
+          </div>
         </div>
       )}
     </div>
