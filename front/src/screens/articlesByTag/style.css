@@ -4,68 +4,6 @@
   margin: 0;
 }
 
-.first-article {
-  width: 80%;
-  background-color: white;
-  display: flex;
-  margin: 1rem;
-  box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
-  transition: 0.5s ease;
-  cursor: pointer;
-  margin-left: 10%;
-}
-
-.first-article:hover {
-  transform: scale(1.1);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
-}
-
-.first-article-image {
-  width: 50%;
-  height: 50%;
-  max-height: 350px;
-  object-fit: cover;
-  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
-}
-
-.first-article-content {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-
-.first-article-authors-container {
-  display: flex;
-
-  justify-content: flex-start;
-}
-
-.first-article-author {
-  margin-left: 20px;
-}
-
-.first-article-avatar {
-  width: 3rem;
-  height: 3rem;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid black;
-}
-
-.first-article h3 {
-  font-size: 2.5rem;
-  margin: 1.5rem;
-  display: flex;
-  justify-content: flex-start;
-  color: black;
-}
-
-.first-article-info {
-  font-size: 1rem;
-  margin: 1.5rem;
-  text-align: justify;
-}
-
 .card-container {
   width: 80%;
   margin-left: 10%;
@@ -113,19 +51,27 @@
 
 .author {
   margin-left: 20px;
+  display: flex;
+}
+
+.author-name {
+  display: flex;
+
+  align-self: center;
+  margin-left: 3px;
 }
 
 .avatar {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: cover;
   border-radius: 50%;
   border: 1px solid black;
 }
 
 .card h3 {
-  font-size: 2.5rem;
-  margin: 1.5rem;
+  font-size: 1.5rem;
+  margin: 20px;
   display: flex;
   justify-content: flex-start;
   color: black;
@@ -133,6 +79,11 @@
 
 .cardInfo {
   font-size: 1rem;
-  margin: 1.5rem;
+  margin: 20px;
   text-align: justify;
+  color: gray;
+}
+
+p {
+  color: black;
 }
